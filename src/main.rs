@@ -4,6 +4,7 @@ use std::path::Path;
 fn main() {
     get_github_com_no_slash_at_the_end();
     get_github_com_link_to_a_file();
+    https_gitlab_com();
 }
 
 fn get_github_com_no_slash_at_the_end() {
@@ -42,17 +43,19 @@ fn get_github_com_link_to_a_file() {
     );
 }
 
-//
-//    // test https gitlab.com
-//    let repo = Repository::from_url("https://gitlab.com/szabgab/rust-digger").unwrap();
-//    assert_eq!(
-//        repo,
-//        Repository::new("gitlab.com", "szabgab", "rust-digger")
-//    );
-//    assert_eq!(repo.url(), "https://gitlab.com/szabgab/rust-digger");
-//    assert!(!repo.is_github());
-//    assert!(repo.is_gitlab());
-//
+fn https_gitlab_com() {
+    let repo = Repository::from_url("https://gitlab.com/szabgab/rust-digger").unwrap();
+    assert_eq!(repo.url(), "https://gitlab.com/szabgab/rust-digger");
+    assert!(!repo.is_github());
+    assert!(repo.is_gitlab());
+    assert_eq!(repo.get_owner(), "szabgab");
+
+    assert_eq!(
+        repo,
+        Repository::new("gitlab.com", "szabgab", "rust-digger")
+    );
+}
+
 //    // test converting to lowercase  gitlab.com
 //    let repo = Repository::from_url("https://gitlab.com/Szabgab/Rust-digger/").unwrap();
 //    assert_eq!(
