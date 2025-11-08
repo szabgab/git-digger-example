@@ -146,7 +146,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "39cab71617ae0d63f51a36d69f866391735b51691dbda63cf6f96d042b63efeb"
 dependencies = [
  "libc",
- "windows-sys 0.60.2",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -202,15 +202,23 @@ dependencies = [
 
 [[package]]
 name = "git-digger"
-version = "0.1.10"
+version = "0.1.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "815ec0377fa14986e9cb1aae372a454686b3002fda0cee5452dc671eaed69e7d"
+checksum = "f1edbaf24e6b14b835dfcb2aa0c8b409339e5dc20f0019848523e26a902e716a"
 dependencies = [
  "env_logger",
  "log",
  "once_cell",
  "regex",
  "ureq",
+]
+
+[[package]]
+name = "git-digger-example"
+version = "0.1.0"
+dependencies = [
+ "git-digger",
+ "tempfile",
 ]
 
 [[package]]
@@ -410,7 +418,7 @@ dependencies = [
  "errno",
  "libc",
  "linux-raw-sys",
- "windows-sys 0.60.2",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -516,7 +524,7 @@ dependencies = [
  "getrandom 0.3.4",
  "once_cell",
  "rustix",
- "windows-sys 0.60.2",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -559,14 +567,6 @@ dependencies = [
  "http",
  "httparse",
  "log",
-]
-
-[[package]]
-name = "use-git-digger"
-version = "0.1.0"
-dependencies = [
- "git-digger",
- "tempfile",
 ]
 
 [[package]]
@@ -627,6 +627,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f2f500e4d28234f72040990ec9d39e3a6b950f9f22d3dba18416c35882612bcb"
 dependencies = [
  "windows-targets 0.53.5",
+]
+
+[[package]]
+name = "windows-sys"
+version = "0.61.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ae137229bcbd6cdf0f7b80a31df61766145077ddf49416a728b02cb3921ff3fc"
+dependencies = [
+ "windows-link",
 ]
 
 [[package]]
